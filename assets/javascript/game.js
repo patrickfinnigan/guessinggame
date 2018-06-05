@@ -4,21 +4,21 @@ var losses = 0;
 var left = 10;
 
 document.onkeyup = function() {
-    // alert("working");
-    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-    if (event.keyCode >= 65 && event.keyCode <= 90){
-        // alert("true")
+    var userguess = event.keyCode;
+    if (userguess >= 65 && userguess <= 90 && event.shiftKey === false) {
+        console.log("true")
     } else {
-        alert("false")
+        console.log("false")
     }
-    console.log(userGuess);
+    console.log(userguess);
 
+    var userguess = '';
 
     var computerGuess = alaphabet[Math.floor(Math.random()*alaphabet.length)];
     console.log(computerGuess)
 
 
-    if (userGuess == computerGuess) {
+    if (userguess == computerGuess) {
         wins + 1;
     } else {
         left = left - 1;
